@@ -1,0 +1,24 @@
+{
+  "name": "drawing-bot",
+  "version": "1.0.0",
+  "description": "Drawing with inverse kinematics",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryosuzuki/drawing-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryosuzuki/drawing-bot/issues"
+  },
+  "homepage": "https://github.com/ryosuzuki/drawing-bot#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "serialport": "^4.0.7"
+  }
+}
