@@ -55,18 +55,20 @@ function animate(pos) {
 }
 
 
-let pathData = 'M5,15 c5.5,0 10-4.5 10,-10 h10';
-let points = pathDataToPolys(pathData, {
+// let pathData = 'M5,15 c5.5,0 10-4.5 10,-10 h10';
+let polygons = pathDataToPolys(pathData, {
   tolerance: 1,
   decimals: 1
 });
 
-points = points[0]
-for (let i=0; i<points.length; i++) {
-  let point = points[i]
-  points[i] = {
-    x: point[0] * 40,
-    y: point[1] * 40,
+let points = []
+for (let polygon of polygons) {
+  for (let i=0; i<polygon.length; i++) {
+    let point = polygon[i]
+    points[i] = {
+      x: point[0] / 4,
+      y: point[1] / 4,
+    }
   }
 }
 
@@ -81,11 +83,11 @@ let i = 0
 let j = 0
 function drawLine(p0, p1) {
   let pos = {
-    x: (p0.x*(100-i) + p1.x*i)/100,
-    y: (p0.y*(100-i) + p1.y*i)/100,
+    x: (p0.x*(10-i) + p1.x*i)/10,
+    y: (p0.y*(10-i) + p1.y*i)/10,
   }
   animate(pos)
-  if (i < 100) {
+  if (i < 10) {
     i++
   } else {
     i = 0
