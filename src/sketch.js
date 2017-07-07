@@ -66,8 +66,8 @@ for (let polygon of polygons) {
   for (let i=0; i<polygon.length; i++) {
     let point = polygon[i]
     points[i] = {
-      x: point[0] / 4,
-      y: point[1] / 4,
+      x: point[0] / 10,
+      y: point[1] / 10,
     }
   }
 }
@@ -82,6 +82,10 @@ for (let polygon of polygons) {
 let i = 0
 let j = 0
 function drawLine(p0, p1) {
+  animate(p0)
+  animate(p1)
+  j++
+  /*
   let pos = {
     x: (p0.x*(10-i) + p1.x*i)/10,
     y: (p0.y*(10-i) + p1.y*i)/10,
@@ -93,10 +97,7 @@ function drawLine(p0, p1) {
     i = 0
     j++
   }
-}
-
-function drawRect() {
-
+  */
 }
 
 function draw() {
