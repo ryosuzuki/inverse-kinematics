@@ -90,7 +90,9 @@ function draw() {
     let p1 = points[(i+1)%points.length]
     line(p0.x, p0.y, p1.x, p1.y)
   }
-  drawLine(points[j%4], points[(j+1)%4])
+  let ci = j%points.length
+  let ni = (j+1)%points.length
+  drawLine(points[ci], points[ni])
 }
 
 
