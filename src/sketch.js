@@ -52,15 +52,30 @@ function animate(pos) {
   let edge3 = Edge(p3, theta1, l1)
   let edge2 = Edge(p2, theta1+theta2, l2)
   let edge4 = Edge(p1, theta1+theta2, l2)
-
 }
 
-let points = [
-  { x: 400, y: 100 },
-  { x: 800, y: 100 },
-  { x: 800, y: 500 },
-  { x: 400, y: 500 },
-]
+
+let pathData = 'M5,15 c5.5,0 10-4.5 10,-10 h10';
+let points = pathDataToPolys(pathData, {
+  tolerance: 1,
+  decimals: 1
+});
+
+points = points[0]
+for (let i=0; i<points.length; i++) {
+  let point = points[i]
+  points[i] = {
+    x: point[0] * 40,
+    y: point[1] * 40,
+  }
+}
+
+// let points = [
+//   { x: 400, y: 100 },
+//   { x: 800, y: 100 },
+//   { x: 800, y: 500 },
+//   { x: 400, y: 500 },
+// ]
 
 let i = 0
 let j = 0
